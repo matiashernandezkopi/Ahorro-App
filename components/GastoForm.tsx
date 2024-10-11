@@ -22,7 +22,7 @@ const GastoForm:React.FC<GastoFormProps> = ({close}) => {
     date: date,
   });
 
-  const { newGasto, categorys, newCategory, total, gastos } = useContext(GastoContext) as GastoContextType;
+  const { newGasto, categorys, newCategory, total, gastos, getGastosLastYear } = useContext(GastoContext) as GastoContextType;
 
   const priorities = [ 1, 2, 3, 4, 5, 6, 7, 8, 9] 
 
@@ -126,7 +126,7 @@ const GastoForm:React.FC<GastoFormProps> = ({close}) => {
 
           
         </View>
-        <Text style={styles.fontedText}>Total: ${formatText((total(gastos) + parseFloat(Gasto.money.replace(',','.'))).toString())}</Text>
+        <Text style={styles.fontedText}>Total: ${formatText((total(getGastosLastYear()) + parseFloat(Gasto.money.replace(',','.'))).toString())}</Text>
       </View>
 
       <View style={styles.selectorContainer}>

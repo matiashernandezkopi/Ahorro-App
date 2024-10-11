@@ -107,9 +107,9 @@ export const GastoProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       const { money, category } = gasto;
       // Convertir el monto a número flotante y acumularlo en la categoría correspondiente
       if (combined[category]) {
-        combined[category] += parseFloat(money);
+        combined[category] += parseFloat(money.replace(',', '.'));
       } else {
-        combined[category] = parseFloat(money);
+        combined[category] = parseFloat(money.replace(',', '.'));
       }
     });
   
